@@ -1,4 +1,6 @@
-<p>
-  <%= label_tag :disable_journal_notifications, l(:disable_notifications, scope: :disable_journal_notifications) %>
-  <%= check_box_tag :disable_journal_notifications %>
-</p>
+<% if render_condition.call(controller) %>
+  <p>
+    <%= label_tag :disable_journal_notifications, l(:disable_notifications, scope: :disable_journal_notifications) %>
+    <%= check_box_tag :disable_journal_notifications %>
+  </p>
+<% end %>
